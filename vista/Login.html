@@ -1,0 +1,20 @@
+{% extends "Base.html" %}
+
+{% block cuerpo %}
+	{% from "Funciones.html" import registro %}
+	<div class="container">
+		<form action="" method="POST">
+
+			<div class = "form-group">
+				{{ registro(formulario.usuario ,class = "form-control") }}
+			</div class ="form-group">
+			<div>
+				{{ registro(formulario.password, class = "form-control") }}
+			</div>
+			<div>
+				<input type="submit" value ="Acceder" class="btn btn-success btn-block">
+			</div>
+		
+		</form>
+	</div>
+{% endblock%}

@@ -1,0 +1,27 @@
+{% macro registro(args) %}
+	<td> {{ args.label }} </td>
+	<dd> {{ args(**kwargs)|safe }} </dd>
+
+	{% if args.errors %}
+		<ul>
+		{% for i in args.errors %}
+			 <li>{{i}}</li> 
+		{% endfor%}
+		</ul>
+	{% endif %}
+
+{% endmacro  %}
+
+{% macro folletos() %}
+	{% with mensaje = get_flashed_messages() %}
+		{% if mensaje  %}
+			{% for i in mensaje %}
+				<ul>{{ i }}</ul>
+
+			{% endfor %}
+
+		{% endif%}
+
+	{% endwith %}
+
+{% endmacro %}

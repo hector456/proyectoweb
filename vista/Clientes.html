@@ -1,0 +1,19 @@
+{% extends "Base.html" %}
+
+{% block cuerpo %}
+
+    <h1>Clientes</h1>
+
+
+        <table class="table">
+            {% for i in list %} 
+                <tr>
+                    {% for e in i %}
+
+                    <td>{{ e }}</td>
+                    {% endfor %} 
+                </tr>
+            {% endfor %}
+        </table>
+
+{% endblock %}
